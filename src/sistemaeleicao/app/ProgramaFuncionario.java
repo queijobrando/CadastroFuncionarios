@@ -5,7 +5,7 @@ import sistemaeleicao.menu.MenuPrincipal;
 
 import java.util.Scanner;
 
-public class programa {
+public class ProgramaFuncionario {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         MenuPrincipal menuPrincipal = new MenuPrincipal();
