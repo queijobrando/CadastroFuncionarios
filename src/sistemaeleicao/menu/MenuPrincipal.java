@@ -1,12 +1,13 @@
 package sistemaeleicao.menu;
 
 import sistemaeleicao.Exceptions.ListException;
-import sistemaeleicao.services.CadastrarFuncionario;
+import sistemaeleicao.models.Funcionario;
+import sistemaeleicao.services.CdtFunc;
 
 import java.util.Scanner;
 
 public class MenuPrincipal extends Menu {
-    private final CadastrarFuncionario cadastrarFuncionario = new CadastrarFuncionario();
+    private final CdtFunc cadastrarFuncionario = new CdtFunc();
 
     @Override
     public void opcoesMenu() {
@@ -15,7 +16,7 @@ public class MenuPrincipal extends Menu {
         System.out.println("\n1.Adicionar um novo funcionário");
         System.out.println("2.Exibir todos os funcionários ativos");
         System.out.println("3.Sair");
-        System.out.println("\nInsira sua opção:");
+        System.out.print("\nInsira sua opção:");
     }
 
     @Override
@@ -28,12 +29,12 @@ public class MenuPrincipal extends Menu {
             try {
                 inputEscolha = Integer.parseInt(sc.nextLine());
                 switch (inputEscolha){
-                    case 1 -> cadastrarFuncionario.adicionarFuncionario(sc);
+                    case 1 -> CdtFunc.adicionarFuncionario(sc);
                     case 2 -> {
                         try {
-                            cadastrarFuncionario.listarFuncionarios();
+                            CdtFunc.listarFuncionarios(sc);
                         }
-                        catch (ListException e){
+                        catch (NumberFormatException e){
                             System.out.println("Erro: "+e.getMessage());
                         }
                     }

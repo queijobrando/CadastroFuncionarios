@@ -8,13 +8,13 @@ import java.util.Date;
 public abstract class PessoaFisica {
     private String nome;
     private Date dataDeNascimento;
-    private Long cpf;
+    private String cpf;
 
     public PessoaFisica(){
 
     }
 
-    public PessoaFisica(String nome, Date dataDeNascimento, Long cpf) {
+    public PessoaFisica(String nome, Date dataDeNascimento, String cpf) {
         this.nome = nome;
         this.dataDeNascimento = dataDeNascimento;
         this.cpf = cpf;
@@ -28,7 +28,7 @@ public abstract class PessoaFisica {
         return dataDeNascimento;
     }
 
-    public Long getCpf() {
+    public String getCpf() {
         return cpf;
     }
 

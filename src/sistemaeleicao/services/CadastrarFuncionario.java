@@ -1,6 +1,6 @@
-package sistemaeleicao.services;
+/*package sistemaeleicao.services;
 
-import sistemaeleicao.Exceptions.ListException;
+
 import sistemaeleicao.models.Funcionario;
 
 import java.text.ParseException;
@@ -36,14 +36,35 @@ public class CadastrarFuncionario {
         }
     }
 
-    public void listarFuncionarios(){
-        if (listafuncionarios.isEmpty()){
-            throw new ListException("Lista vazia");
-        }
-        System.out.println("\nFUNCIONARIOS REGISTRADOS: ");
-        for (Funcionario i : listafuncionarios){
-            System.out.println(i);
-        }
+    public void listarFuncionarios(Scanner sc){
+        int menuescolha = 0;
+        do {
+            System.out.println("\nFUNCIONARIOS REGISTRADOS: ");
+            if (listafuncionarios.isEmpty()){
+                System.out.println("Lista vazia");;
+            } else {
+                for (Funcionario i : listafuncionarios) {
+                    System.out.println(i);
+                }
+            }
+
+            System.out.print("Para voltar digite [1]: ");
+            try {
+                menuescolha = Integer.parseInt(sc.nextLine());
+                if (menuescolha == 1){
+                    System.out.println("Voltando...");
+                    break;
+                } else {
+                    System.out.print("Opção inválida, digite novamente: ");
+                }
+            }
+            catch (NumberFormatException e){
+                System.out.println("Entrada inválida!");
+            }
+
+        }while (true);
+
+
     }
 
 }

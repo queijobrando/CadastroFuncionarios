@@ -7,7 +7,7 @@ import java.util.Date;
 public class Funcionario extends PessoaFisica {
     private Cargos cargo;
 
-    public Funcionario(String nome, Date dataDeNascimento, Long cpf, String cargo) {
+    public Funcionario(String nome, Date dataDeNascimento, String cpf, String cargo) {
         super(nome, dataDeNascimento, cpf);
         try {
             this.cargo = Cargos.valueOf(cargo.toUpperCase());
